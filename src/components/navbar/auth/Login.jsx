@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
+import Register from "./Register";
 
 export default function Login() {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+  const [shows, setShows] = useState(false);
 
+  const handleTest = () => {
+    setShow(false);
+    setShows(true);
+  };
   return (
     <>
       <button className="btnNavbar login" onClick={handleShow}>
@@ -19,7 +25,8 @@ export default function Login() {
             <input type="text" className="inputAuth" placeholder="Password" />
             <button className="btnAuth">Login</button>
             <p className="toRegist">
-              Don't have an account ? Click <strong>Here</strong>
+              Don't have an account ? Click{" "}
+              <strong onClick={handleTest}>Here</strong>
             </p>
           </div>
         </form>

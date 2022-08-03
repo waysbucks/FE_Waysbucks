@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,800;1,400&display=swap");
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+
+
 }
 
 /* navbar */
@@ -171,8 +177,8 @@ hr{
 
 
 ::placeholder{
-    color: #E0C8C840 25%;
-    padding-left: 10px;
+    color: #d29595;
+    padding-left: 0px;
 }
 
 .toRegist{
@@ -185,3 +191,230 @@ hr{
 
 
 /* /navbar */
+
+
+
+/* profile */
+.profileContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.profileContainer h1{
+    margin-bottom: 40px;
+
+}
+
+.profileLeft{
+    margin-left: 10px;
+}
+
+.profileLeft h1{
+    color: #BD0707;
+    font-weight: 600;
+}
+
+.profileRight h1{
+    color: #613D2B;
+    font-weight: 600;
+}
+
+
+.biodata{
+    display: flex;
+    flex-direction: row;
+}
+
+.biodata img{
+    width: 241px;
+    height: 281px;
+    border-radius: 4px;
+}
+
+.biodata ul li{
+    list-style: none;
+}
+
+.biodataTitle{
+    font-size: 24px;
+    color: #613D2B;
+    font-weight: 700;
+}
+
+.biodataContent{
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* profileCard */
+
+.profileCard{
+    width: 650px;
+    background-color: #F6DADA;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.contentCardLeft{
+    display: flex;
+    flex-direction: column;
+}
+
+.mapContent{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+
+.contentCardLeft ul li{
+    list-style: none;
+}
+
+.contentCardLeft img{
+    width: 100px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.profileCardTitle{
+    font-size: 20px;
+    font-weight: 700;
+    color: #BD0707;
+    margin-top: -2px;
+}
+
+.profileCardDate{
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #BD0707;
+    font-weight: 500;
+}
+.profileCardDate strong{
+    font-weight: 700;
+}
+
+.profileCardToping strong{
+    color: #974A4A;
+}
+
+.profileCardToping{
+    font-size: 14px;
+    color: #BD0707;
+    margin-bottom: 7px;
+}
+
+.profileCardPrice{
+    font-size: 14px;
+    color: #974A4A;
+}
+
+.profileCard{
+    display: flex;
+    flex-direction: row;
+}
+
+.contentCardRight img{
+    display: block ;
+    width: 70px;
+    height: 70px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.contentCardRight{
+    justify-content: center;
+    text-align: center;
+}
+
+.contentCardRight span {
+    margin-top: 20px;
+    display: block;
+    background: #00d0ff32;
+}
+
+.contentCardRight span p{
+    color: #00d1ff;
+    font-weight: 600;
+}
+
+.profileSubTotal {
+    font-size: 15px;
+    font-weight: 700;
+    color: #974A4A;
+}
+
+/* profileCard */
+
+/* /profile */
+
+
+
+/* addProduct */
+.addProductContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.addProductLeft h1{
+    color: #BD0707;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.addProductLeft input{
+    display: block;
+    width: 700px;
+    height: 50px;
+    border: 2px solid #BD0707;
+    background-color: #E0C8C840;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.addProductLeft input:focus-visible{
+    outline: #BD0707;
+    background-color: #063fea1a;
+}
+
+.addProductLeft button{
+    width: 96%;
+    height: 40px;
+    margin-left: 14px;
+    background-color: #BD0707;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.addProductImage{
+    display: flex;
+    width: 700px;
+    height: 50px;
+    border: 2px solid #BD0707;
+    background-color: #E0C8C840;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    color: #d29595   ;
+    margin-bottom: 40px;
+
+}
+
+.addProductRight img{
+    margin-top: -10px;
+    width: 350px;
+    height: 450px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+/* /addProduct */
+
+

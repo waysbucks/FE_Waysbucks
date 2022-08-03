@@ -9,7 +9,7 @@ import Logo from "../../assets/Group.svg";
 import Cart from "../../assets/Vector.svg";
 
 export default function Navbar() {
-  const [isLogin, setLogin] = useState(false);
+  const [isLogin, setLogin] = useState(true);
 
   return (
     <nav>

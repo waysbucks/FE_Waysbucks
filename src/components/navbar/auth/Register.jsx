@@ -11,7 +11,7 @@ export default function Register() {
       <button className="btnNavbar register" onClick={handleShow}>
         Register
       </button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} id="modalRegister">
         <form>
           <div className="authContainer">
             <h1 className="authTitle">Register</h1>
