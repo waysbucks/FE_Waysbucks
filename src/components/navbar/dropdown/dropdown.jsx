@@ -13,20 +13,24 @@ export default function Dropdown() {
       title={<img src={Photo} alt="photoProfile" className="navbarPhoto" />}
       className="navImg"
     >
-      <NavDropdown.Item className="">
+      <NavDropdown.Item href="/profile">
         <img src={Profile} alt="profile" className="d-flex dropdown-img" />
         <p className="d-flex mb-0 dropCust pe-4">Profile</p>
       </NavDropdown.Item>
 
-      <NavDropdown.Item className="mb-2 mt-2 ps-3 d-none">
-        <img src={AddProduct} alt="profile" className="d-flex dropdown-img" />
+      <NavDropdown.Item href="/add-product" className="mb-2 mt-2 ps-3 d-none">
+        <img
+          src={AddProduct}
+          alt="AddProduct"
+          className="d-flex dropdown-img"
+        />
         <p className="d-flex mb-0 ps-3 dropAdmin">AddProduct</p>
       </NavDropdown.Item>
 
       <NavDropdown.Item className="mb-2 mt-3 ps-3 d-none">
         <img
           src={AddToping}
-          alt="profile"
+          alt="AddToping"
           className="d-flex dropdown-img navAddTopping"
         />
         <p className="d-flex mb-0 dropAdmin ">AddToping</p>

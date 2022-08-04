@@ -2,14 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Dropdown from "./dropdown/dropdown";
-import Login from "./auth/Login";
-import Register from "./auth/Register";
+import ModalAuth from "../modal/ModalAuth";
 
 import Logo from "../../assets/Group.svg";
 import Cart from "../../assets/Vector.svg";
 
 export default function Navbar() {
-  const [isLogin, setLogin] = useState(true);
+  const [isLogin, setLogin] = useState(false);
 
   return (
     <nav>
@@ -19,14 +18,15 @@ export default function Navbar() {
         </Link>
       </div>
       {isLogin ? (
-        <div className="navbarLeft">
-          <Login />
-          <Register />
+        <div className="navbarRight">
+          <Link to={"/add-cart"}>
+            <img src={Cart} alt="cart" className="navbarCart" />
+          </Link>
+          <Dropdown />
         </div>
       ) : (
-        <div className="navbarRight">
-          <img src={Cart} alt="cart" className="navbarCart" />
-          <Dropdown />
+        <div className="navbarLeft">
+          <ModalAuth />
         </div>
       )}
     </nav>

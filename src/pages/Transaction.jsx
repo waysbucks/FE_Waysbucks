@@ -1,32 +1,57 @@
-import React from "react";
-import { Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Table } from "react-bootstrap";
+import ModalTransaction from "../components/modal/ModalTransaction";
+
+// fakeData
+import dummyTransaction from "../DataDummy/dummyTransaction";
 
 export default function Transaction() {
+  const [showTrans, setShowTrans] = useState(false);
+  const handleShow = () => setShowTrans(true);
+  const handleClose = () => setShowTrans(false);
+
   return (
-    <Container>
+    <Container className="tableContainer">
       <h1>Income Transaction</h1>
       <div>
-        <table>
-          <th>
-            <td>No</td>
-            <td>Name</td>
-            <td>Adress</td>
-            <td>Post Code</td>
-            <td>Income</td>
-            <td>Status</td>
-            <td>Action</td>
-          </th>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+        <Table bordered hover>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Post Code</th>
+              <th>Income</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dummyTransaction?.map((item, index) => (
+              <tr onClick={handleShow} key={index}>
+                <td>{index + 1}</td>
+                <td>{item.name}</td>
+                <td>{item.address}</td>
+                <td>{item.postCode}</td>
+                <td className="tablePrice">{item.income}</td>
+                <td
+                  className={
+                    item.status === "Success"
+                      ? "tableSuccess"
+                      : item.status === "Cancel"
+                      ? "tableCancel"
+                      : item.status === "Waiting Approve"
+                      ? "tableWaiting"
+                      : "tableOtw"
+                  }
+                >
+                  {item.status}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </div>
+      <ModalTransaction showTrans={showTrans} close={handleClose} />
     </Container>
   );
 }
