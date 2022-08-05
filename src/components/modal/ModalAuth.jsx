@@ -23,7 +23,6 @@ export default function ModalAuth() {
 
   // functional
   const [login, setLogin] = useState({});
-  console.log(login);
 
   const handleChange = (e) => {
     setLogin({
@@ -34,7 +33,6 @@ export default function ModalAuth() {
 
   const handleSubmit = (e) => {
     try {
-      console.log(e);
       e.prevent.default();
     } catch (error) {
       console.log("error");

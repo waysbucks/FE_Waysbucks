@@ -6,15 +6,19 @@ import ModalTransaction from "../components/modal/ModalTransaction";
 import dummyTransaction from "../DataDummy/dummyTransaction";
 
 export default function Transaction() {
+  const [idModal, setIdModal] = useState();
   const [showTrans, setShowTrans] = useState(false);
-  const handleShow = () => setShowTrans(true);
+  const handleShow = () => {
+    setIdModal(dummyTransaction.id);
+    setShowTrans(true);
+  };
   const handleClose = () => setShowTrans(false);
 
   return (
     <Container className="tableContainer">
       <h1>Income Transaction</h1>
       <div>
-        <Table bordered hover>
+        <Table hover>
           <thead>
             <tr>
               <th>No</th>
@@ -28,6 +32,12 @@ export default function Transaction() {
           <tbody>
             {dummyTransaction?.map((item, index) => (
               <tr onClick={handleShow} key={index}>
+                <ModalTransaction
+                  showTrans={showTrans}
+                  close={handleClose}
+                  id={item?.id}
+                  product={item.product}
+                />
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.address}</td>

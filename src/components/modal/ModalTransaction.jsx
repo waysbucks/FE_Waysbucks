@@ -4,38 +4,29 @@ import QRCode from "react-qr-code";
 import Logo from "../../assets/Group.svg";
 import Coffee from "../../assets/coffee.jpg";
 
-export default function ModalTransaction({ showTrans, close }) {
-  console.log(close);
+import dummyTransaction from "../../DataDummy/dummyTransaction";
+
+export default function ModalTransaction({ showTrans, close, product }) {
+  console.log(product);
   return (
     <Modal show={showTrans} onHide={close} className="modal-transaction">
       <div className="profileCard">
         <div className="contentCardLeft">
-          <div className="mapContent">
-            <img src={Coffee} alt="coffee" />
-            <ul>
-              <li className="profileCardTitle">Capuchino</li>
-              <li className="profileCardDate">
-                <strong>Saturday</strong>,20 Oktober 2022
-              </li>
-              <li className="profileCardToping">
-                <strong>Toping</strong> : Bobba
-              </li>
-              <li className="profileCardPrice">Price: Rp.20.000</li>
-            </ul>
-          </div>
-          <div className="mapContent">
-            <img src={Coffee} alt="coffee" />
-            <ul>
-              <li className="profileCardTitle">Ice Coffe Palm Sugar</li>
-              <li className="profileCardDate">
-                <strong>Saturday</strong>,20 Oktober 2022
-              </li>
-              <li className="profileCardToping">
-                <strong>Toping</strong> : Bobba,Jelly,Coklat
-              </li>
-              <li className="profileCardPrice">Price: Rp.20.000</li>
-            </ul>
-          </div>
+          {product?.map((item, index) => (
+            <div className="mapContent">
+              <img src={item.productImg} alt="coffee" />
+              <ul>
+                <li className="profileCardTitle">{item.productName}</li>
+                <li className="profileCardDate">
+                  <strong>Saturday</strong>,20 Oktober 2022
+                </li>
+                <li className="profileCardToping">
+                  <strong>Toping :</strong>
+                </li>
+                <li className="profileCardPrice">Price: {item.price}</li>
+              </ul>
+            </div>
+          ))}
         </div>
         <div className="contentCardRight">
           <img src={Logo} alt="logo" />

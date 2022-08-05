@@ -415,6 +415,20 @@ hr{
 
 }
 
+.previewName{
+    display: flex;
+    width: 700px;
+    height: 50px;
+    border: 2px solid #BD0707;
+    background-color: #E0C8C840;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    color: black   ;
+    margin-bottom: 40px;
+}
+
 .addProductRight img{
     margin-top: -10px;
     width: 350px;
@@ -462,8 +476,17 @@ th,td{
     color: #78A85A;
     font-weight: 600;
 }
+.tableSuccess:hover{
+    color: #78A85A;
+    font-weight: 600;
+}
 
 .tableWaiting{
+    color: #FF9900;
+    font-weight: 600;
+}
+
+.tableWaiting:hover{
     color: #FF9900;
     font-weight: 600;
 }
@@ -473,7 +496,17 @@ th,td{
     font-weight: 600;
 }
 
+.tableOtw:hover{
+    color: #00D1FF;
+    font-weight: 600;
+}
+
 .tableCancel{
+    color: #E83939;
+    font-weight: 600;
+}
+
+.tableCancel:hover{
     color: #E83939;
     font-weight: 600;
 }
