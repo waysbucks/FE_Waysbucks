@@ -16,7 +16,6 @@ import Topping8 from "../assets/TP8-strawbery-popping.png";
 export default function DetailProductPage() {
   return (
     <div>
-      <Navbar />
       <section>
         <div className={productModules.wrap}>
           <div className={productModules.left}>

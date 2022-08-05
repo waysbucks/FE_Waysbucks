@@ -9,7 +9,6 @@ import trash from "../assets/trash.svg";
 export default function CartPage() {
   return (
     <div>
-      <Navbar />
       <section>
         <div className={cartModules.container}>
           <p>My Cart</p>

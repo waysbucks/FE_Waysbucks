@@ -7,7 +7,6 @@ import Coffee from "../../assets/coffee.jpg";
 import dummyTransaction from "../../DataDummy/dummyTransaction";
 
 export default function ModalTransaction({ showTrans, close, product }) {
-  console.log(product);
   return (
     <Modal show={showTrans} onHide={close} className="modal-transaction">
       <div className="profileCard">
