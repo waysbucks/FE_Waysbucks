@@ -24,7 +24,7 @@ export default function DetailProductPage() {
           <div className={productModules.right}>
             <span className={productModules.name}>
               <p>Ice Cofee Palm Sugar</p>
-              <p1>Rp.27.000</p1>
+              <p>Rp.27.000</p>
             </span>
             <div className={productModules.text_top}>
               <p>Toping</p>

@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
+import { UserContext } from "../../context/UserContext";
 
 export default function ModalAuth() {
   // modal-check
@@ -31,14 +33,40 @@ export default function ModalAuth() {
     });
   };
 
-  const handleSubmit = (e) => {
-    try {
-      e.prevent.default();
-    } catch (error) {
-      console.log("error");
-    }
-  };
   //  /fuctuional
+
+  // auth
+  const navigate = useNavigate();
+  const [state, dispatch] = useContext(UserContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    let status;
+    if (email === "admin@mail.com") {
+      status = "admin";
+      navigate("/transaction");
+    } else {
+      status = "customer";
+      navigate("/");
+    }
+
+    const data = {
+      email,
+      password,
+      status,
+    };
+
+    dispatch({
+      type: "LOGIN_SUCCESS",
+      payload: data,
+    });
+    setShow(false);
+  };
+
+  //  /auth
   return (
     <>
       <>
@@ -46,7 +74,7 @@ export default function ModalAuth() {
           Login
         </button>
         <Modal show={show} onHide={handleClose}>
-          <form onSubmit={(e) => handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="authContainer">
               <h1 className="authTitle">Login</h1>
               <input
@@ -54,6 +82,7 @@ export default function ModalAuth() {
                 className="inputAuth p-2"
                 placeholder="Email"
                 name="email"
+                id="email"
                 onChange={handleChange}
               />
               <input
@@ -61,9 +90,12 @@ export default function ModalAuth() {
                 className="inputAuth p-2"
                 placeholder="Password"
                 name="password"
+                id="password"
                 onChange={handleChange}
               />
-              <button className="btnAuth">Login</button>
+              <button type="submit" className="btnAuth">
+                Login
+              </button>
               <p className="toRegist">
                 Don't have an account ? Click{" "}
                 <strong onClick={handleSwitchRegister}>Here</strong>

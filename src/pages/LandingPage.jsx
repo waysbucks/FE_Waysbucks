@@ -1,4 +1,3 @@
-import Navbar from "../components/navbar/navbar";
 import cssModules from "../styles/home.module.css";
 import landing_2 from "../assets/land.2.png";
 import pitc from "../assets/Rectangle 1.png";
@@ -10,24 +9,24 @@ export default function LandingPage() {
       <section>
         <div className={cssModules.landing_page}>
           <div className={cssModules.reactangle}>
-            <span className={cssModules.text_inside}>
+            <div className={cssModules.text_inside}>
               <h3>WAYSBUCKS</h3>
-              <p>
-                <p1>
+              <span>
+                <p>
                   Things are changing, but we're still here for you <br />
-                </p1>
+                </p>
                 <br />
-                <p2>
+                <p>
                   We have temporarily closed our in-store cafes, but select{" "}
                   <br />
                   grocery and drive-thru location remaining open.
                   <br />
-                  <p3>Waysbucks</p3> Driver is also available <br />
+                  <strong>Waysbucks</strong> Driver is also available <br />
                   <br />
                   let's Orderr...
-                </p2>
-              </p>
-            </span>
+                </p>
+              </span>
+            </div>
             <div>
               <img className={cssModules.pitc} src={landing_2} alt="ok" />
             </div>
@@ -45,10 +44,10 @@ export default function LandingPage() {
               <Card className={cssModules.card2} style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={pitc} />
                 <Card.Body>
-                  <Card.Text>
-                    <p className={cssModules.text1}>Ice Coffee Palm Sugar</p>
-                    <p className={cssModules.text2}>Rp27.000</p>
+                  <Card.Text className={cssModules.text1}>
+                    Ice Coffee Palm Sugar
                   </Card.Text>
+                  <Card.Text className={cssModules.text2}>Rp27.000</Card.Text>
                 </Card.Body>
               </Card>
             </div>

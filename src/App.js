@@ -13,6 +13,8 @@ import AddProduct from "./pages/AddProduct"
 import AddToping from "./pages/AddToping";
 import Transaction from "./pages/Transaction";
 
+import PrivateRoute from "./components/privateRoute/PrivateRoute";
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,11 +22,13 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/add-toping" element={<AddToping />} />
-        <Route path="/transaction" element={<Transaction />} />
         <Route path="/detail-product" element={<DetailProduct/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/" element={<PrivateRoute />}>
+        <Route path="/transaction" element={<Transaction />} />
+        <Route path="/add-toping" element={<AddToping />} />
+        <Route path="/add-product" element={<AddProduct />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

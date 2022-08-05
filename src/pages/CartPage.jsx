@@ -12,7 +12,7 @@ export default function CartPage() {
       <section>
         <div className={cartModules.container}>
           <p>My Cart</p>
-          <p1>Review Your Order</p1>
+          <p>Review Your Order</p>
           <div className={cartModules.wrap}>
             <div className={cartModules.left}>
               <span>
@@ -21,11 +21,11 @@ export default function CartPage() {
               <div className={cartModules.con_wrap}>
                 <span className={cartModules.tex_left}>
                   <p>Ice Cofee Palm Sugar</p>
-                  <p1>Rp33.000</p1>
+                  <p>Rp33.000</p>
                 </span>
                 <span className={cartModules.tex_left1}>
                   <p>
-                    Toping :<p1> Bill Berry Boba,Buble Tea Gelatin</p1>
+                    Toping :<span> Bill Berry Boba,Buble Tea Gelatin</span>
                   </p>
                   <img src={trash} />
                 </span>
