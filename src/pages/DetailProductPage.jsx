@@ -1,4 +1,3 @@
-import Navbar from "../components/navbar/navbar";
 import productModules from "../styles/product.module.css";
 
 // main image
@@ -23,8 +22,10 @@ export default function DetailProductPage() {
           </div>
           <div className={productModules.right}>
             <span className={productModules.name}>
-              <p>Ice Cofee Palm Sugar</p>
-              <p>Rp.27.000</p>
+              <p className={productModules.titleProduct}>
+                Ice Cofee Palm Sugar
+              </p>
+              <p className={productModules.priceBrown}>Rp.27.000</p>
             </span>
             <div className={productModules.text_top}>
               <p>Toping</p>

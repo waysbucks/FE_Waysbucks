@@ -14,23 +14,27 @@ export default function CartPage() {
           <p>My Cart</p>
           <p>Review Your Order</p>
           <div className={cartModules.wrap}>
+            {/*  */}
             <div className={cartModules.left}>
-              <span>
-                <img src={cart_pitc} />
-              </span>
-              <div className={cartModules.con_wrap}>
-                <span className={cartModules.tex_left}>
-                  <p>Ice Cofee Palm Sugar</p>
-                  <p>Rp33.000</p>
+              {/* <div className={cartModules.warpProduct}>
+                <span>
+                  <img src={cart_pitc} />
                 </span>
-                <span className={cartModules.tex_left1}>
-                  <p>
-                    Toping :<span> Bill Berry Boba,Buble Tea Gelatin</span>
-                  </p>
-                  <img src={trash} />
-                </span>
-              </div>
+                <div className={cartModules.con_wrap}>
+                  <span className={cartModules.tex_left}>
+                    <p>Ice Cofee Palm Sugar</p>
+                    <p>Rp33.000</p>
+                  </span>
+                  <span className={cartModules.tex_left1}>
+                    <p>
+                      Toping : <span> Bill Berry Boba,Buble Tea Gelatin</span>
+                    </p>
+                    <img src={trash} />
+                  </span>
+                </div>
+              </div> */}
             </div>
+
             <div className={cartModules.right}>
               <div className={cartModules.rightline}>
                 <span>

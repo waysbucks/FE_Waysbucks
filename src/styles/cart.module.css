@@ -5,6 +5,11 @@ span{
   display: block;
 }
 
+.warpProduct{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .container{ 
   margin: 50px 0 0 150px;
 }
@@ -102,9 +107,11 @@ span{
 }
 .tex_left1>p{
   color: #974A4A;
+  display: flex;
 }
-.tex_left1 p>p1{
+.tex_left1 p>span{
   color: #BD0707;
+  padding-left: 10px;
 }
 
 .rightline{

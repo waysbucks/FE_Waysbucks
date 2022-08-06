@@ -24,10 +24,10 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/detail-product" element={<DetailProduct/>}/>
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="/" element={<PrivateRoute />}>
-        <Route path="/transaction" element={<Transaction />} />
-        <Route path="/add-toping" element={<AddToping />} />
-        <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/" element={<PrivateRoute/>}>
+          <Route path="/transaction" element={<Transaction />} />
+          <Route path="/add-toping" element={<AddToping />} />
+          <Route path="/add-product" element={<AddProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>

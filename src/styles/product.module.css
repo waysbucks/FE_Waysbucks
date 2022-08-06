@@ -71,12 +71,12 @@ span{
   color:#974A4A;
   font-size: 20px;
 }
-.name>p{
+.titleProduct{
   font-size: 50px;
   font-weight: 700;
   color: #BD0707;
 }
-.name>p1{
+.priceBrown{
    font-size: 30px;
    font-weight: 700;
    color: #974A4A;
