@@ -1,7 +1,10 @@
 import cssModules from "../styles/home.module.css";
 import landing_2 from "../assets/land.2.png";
-import pitc from "../assets/Rectangle 1.png";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+//dummy
+import dummyLandingPage from "../DataDummy/dummyLandingPage";
 
 export default function LandingPage() {
   return (
@@ -9,10 +12,10 @@ export default function LandingPage() {
       <section>
         <div className={cssModules.landing_page}>
           <div className={cssModules.reactangle}>
-            <div className={cssModules.text_inside}>
+            <span className={cssModules.text_inside}>
               <h3>WAYSBUCKS</h3>
               <span>
-                <p>
+                <p className={cssModules.p1}>
                   Things are changing, but we're still here for you <br />
                 </p>
                 <br />
@@ -21,12 +24,13 @@ export default function LandingPage() {
                   <br />
                   grocery and drive-thru location remaining open.
                   <br />
-                  <strong>Waysbucks</strong> Driver is also available <br />
+                  <strong className="cssModules.>">Waysbucks</strong> Driver is
+                  also available <br />
                   <br />
                   let's Orderr...
                 </p>
               </span>
-            </div>
+            </span>
             <div>
               <img className={cssModules.pitc} src={landing_2} alt="ok" />
             </div>
@@ -35,22 +39,28 @@ export default function LandingPage() {
       </section>
       {/* <hr /> */}
       <section>
+        <span className={cssModules.textofdown}>
+          <p>Let's Order</p>
+        </span>
         <div className={cssModules.landofdown}>
-          <span className={cssModules.textofdown}>
-            <p>Let's Order</p>
-          </span>
           <>
-            <div className={cssModules.card}>
-              <Card className={cssModules.card2} style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={pitc} />
-                <Card.Body>
-                  <Card.Text className={cssModules.text1}>
-                    Ice Coffee Palm Sugar
-                  </Card.Text>
-                  <Card.Text className={cssModules.text2}>Rp27.000</Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
+            {dummyLandingPage?.map((item, index) => (
+              <div className={cssModules.card3}>
+                <Card className={cssModules.card2}>
+                  <Link to="/detail-product">
+                    <Card.Img variant="top" src={item.productImage} />
+                  </Link>
+                  <Card.Body>
+                    <Card.Text className={cssModules.text1}>
+                      {item.productName}
+                    </Card.Text>
+                    <Card.Text className={cssModules.text2}>
+                      {item.price}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))}
           </>
         </div>
       </section>
