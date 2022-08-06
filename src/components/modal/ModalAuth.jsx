@@ -38,7 +38,6 @@ export default function ModalAuth() {
   // auth
   const navigate = useNavigate();
   const [state, dispatch] = useContext(UserContext);
-  console.log(state);
 
   const handleSubmit = (e) => {
     e.preventDefault();

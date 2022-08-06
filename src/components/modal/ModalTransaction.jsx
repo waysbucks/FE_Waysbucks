@@ -2,9 +2,6 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import QRCode from "react-qr-code";
 import Logo from "../../assets/Group.svg";
-import Coffee from "../../assets/coffee.jpg";
-
-import dummyTransaction from "../../DataDummy/dummyTransaction";
 
 export default function ModalTransaction({ showTrans, close, product }) {
   return (
@@ -12,7 +9,7 @@ export default function ModalTransaction({ showTrans, close, product }) {
       <div className="profileCard">
         <div className="contentCardLeft">
           {product?.map((item, index) => (
-            <div className="mapContent">
+            <div className="mapContent" key={index}>
               <img src={item.productImg} alt="coffee" />
               <ul>
                 <li className="profileCardTitle">{item.productName}</li>

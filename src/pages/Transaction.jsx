@@ -10,6 +10,10 @@ export default function Transaction() {
   const handleShow = () => setShowTrans(true);
   const handleClose = () => setShowTrans(false);
 
+  const id = document.getElementById;
+
+  console.log(dummyTransaction[1]);
+
   return (
     <Container className="tableContainer">
       <h1>Income Transaction</h1>

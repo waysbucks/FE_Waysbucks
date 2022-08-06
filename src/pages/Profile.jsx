@@ -54,7 +54,8 @@ export default function Profile() {
           </div>
           <div className="contentCardRight">
             <img src={Logo} alt="logo" />
-            <QRCode value="test" bgColor="transparent" size={80} />
+
+            <QRCode value="git re" bgColor="transparent" size={80} />
             <span>
               <p>On The Way</p>
             </span>

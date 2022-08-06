@@ -1,72 +1,92 @@
+import { useParams } from "react-router-dom";
 import productModules from "../styles/product.module.css";
 
 // main image
+import checkToping from "../assets/checkToping.svg";
 import PitcCofee from "../assets/cofee.png";
 // topping
-import Topping1 from "../assets/TP1-buble-tea-gelatin.png";
-import Topping2 from "../assets/TP2-manggo.png";
-import Topping3 from "../assets/TP3-green-coconut.png";
-import Topping4 from "../assets/TP4-boba-manggo.png";
-import Topping5 from "../assets/TP5-bill-berry-boba.png";
-import Topping6 from "../assets/TP6-kiwi-popping-pearl.png";
-import Topping7 from "../assets/TP7-matcha-cantaloupe.png";
-import Topping8 from "../assets/TP8-strawbery-popping.png";
+
+// dummyData
+import dummyLandingPage from "../DataDummy/dummyLandingPage";
+import dataToping from "../DataDummy/dummyTopping";
+import { useState } from "react";
 
 export default function DetailProductPage() {
+  const params = useParams();
+  const data = dummyLandingPage[parseInt(params.id - 1)];
+
+  // check
+  const [show, setShow] = useState(false);
+  console.log(show);
+
+  const handleCheck = () => {
+    if (show === false) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+  // /check
+
+  // test
+  const [toping, setToping] = useState([]);
+  console.log(toping);
+  const handleChange = (e) => {
+    let updateToping = [...toping];
+    if (e.target.checked) {
+      updateToping = [...toping, e.target.value];
+    } else {
+      updateToping.splice(toping.indexOf(e.target.value));
+    }
+    setToping(updateToping);
+  };
   return (
     <div>
       <section>
         <div className={productModules.wrap}>
           <div className={productModules.left}>
-            <img src={PitcCofee} alt="oke" />
+            <img src={data.productImage} alt="oke" />
           </div>
           <div className={productModules.right}>
             <span className={productModules.name}>
-              <p className={productModules.titleProduct}>
-                Ice Cofee Palm Sugar
-              </p>
-              <p className={productModules.priceBrown}>Rp.27.000</p>
-            </span>
-            <div className={productModules.text_top}>
-              <p>Toping</p>
+              <p className={productModules.titleProduct}>{data.productName}</p>
+              <p className={productModules.priceBrown}>{data.price}</p>
               <div className={productModules.topings}>
-                <div className={productModules.toping}>
-                  <img src={Topping1} alt="1" />
-                  <p>Bubble Tea Gelatin</p>
-                </div>
-                <div className={productModules.toping}>
-                  <img src={Topping2} alt="2" />
-                  <p>Manggo</p>
-                </div>
-                <div className={productModules.toping}>
-                  <img src={Topping3} alt="3" />
-                  <p>Green Coconut</p>
-                </div>
-                <div className={productModules.toping}>
-                  <img src={Topping4} alt="4" />
-                  <p>Boba Manggo</p>
-                </div>
-                <div className={productModules.toping}>
-                  <img src={Topping5} alt="5" />
-                  <p>Bill Berry Boba</p>
-                </div>
-                <div className={productModules.toping}>
-                  <img src={Topping6} alt="6" />
-                  <p>Kiwi Popping Pearl</p>
-                </div>
-                <div className={productModules.toping}>
-                  <img src={Topping7} alt="7" />
-                  <p>Matcha Cataloupe</p>
-                </div>
-                <div className={productModules.toping}>
-                  <img src={Topping8} alt="8" />
-                  <p>Strawberry Popping</p>
-                </div>
+                {dataToping?.map((item, index) => (
+                  <div className={productModules.toping} key={index}>
+                    <label
+                      htmlFor={item.id}
+                      className={productModules.checkContainer}
+                    >
+                      <input
+                        type="checkbox"
+                        id={item.id}
+                        onChange={handleChange}
+                        value={item.name}
+                        name="toping"
+                        className={productModules.testCheck}
+                      />
+                      <span></span>
+                      <img
+                        src={checkToping}
+                        alt="check"
+                        className={productModules.checkmark}
+                      />
+                      <img
+                        src={item.image}
+                        alt="1"
+                        onClick={handleCheck}
+                        className={productModules.imageToping}
+                      />
+                    </label>
+                    <p>{item.name}</p>
+                  </div>
+                ))}
               </div>
-            </div>
+            </span>
             <div className={productModules.price}>
               <p>Total</p>
-              <p>Rp.27.000</p>
+              <p>{data.price}</p>
             </div>
             <div className={productModules.btn_grp}>
               <button className={productModules.btn}> Add Cart</button>

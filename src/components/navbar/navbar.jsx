@@ -21,7 +21,7 @@ export default function Navbar() {
       </div>
       {isLogin ? (
         <div className="navbarRight">
-          <Link to={"/add-cart"}>
+          <Link to={"/cart"}>
             <img src={Cart} alt="cart" className="navbarCart" />
           </Link>
           <Dropdown />

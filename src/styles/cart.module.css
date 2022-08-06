@@ -9,9 +9,19 @@ span{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: 20px;
 }
+
+.imgProduct{
+  width: 100px;
+  height: 120px;
+  border-radius: 5px;
+}
+
 .container{ 
-  margin: 50px 0 0 150px;
+  margin: 40px 0 0 130px;
 }
 .wrap{
   display: flex;
@@ -21,7 +31,7 @@ span{
 
 .left{
   padding: 2rem 0 2rem 0;
-  display: flex;
+ 
   width: 50rem; 
   min-height:10px;
   border-top:0.1rem solid #974A4A ;
@@ -36,6 +46,7 @@ span{
 
 .con_wrap{
   width: 100%;
+  margin-left: 20px;
 }
 .tex_left{
   display: flex;
@@ -51,9 +62,9 @@ span{
   .right{
     
     /* border: 1px solid black; */
-    margin-left:100px;
-
-    width: 30rem;
+    margin-left:60px;
+    margin-right: 60px;
+    width: 25rem;
   }
   .rightline{
     padding: 1rem 0 0 0;
@@ -85,7 +96,13 @@ span{
 }
 
 /* font */
-.container>p{
+.titlePage{
+  font-size: 40px;
+  font-weight: 900;
+  color: #BD0707;
+}
+
+.subtitlePage{
   color: #BD0707;
   font-size: 24px;
   font-weight: 700;
@@ -122,6 +139,7 @@ span{
 }
 .price>p{
   color:#BD0707 ;
+  font-weight: 800;
 }
 .btn_grp>button{
   font-size: 18px;

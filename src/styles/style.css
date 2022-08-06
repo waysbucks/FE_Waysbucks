@@ -611,3 +611,9 @@ th,td{
     
 }
 /* /Detail-Product */
+
+/* landing */
+.card-img-top{
+    height: 300px !important;
+}
+/* landing */

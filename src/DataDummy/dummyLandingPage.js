@@ -1,26 +1,64 @@
+import Product1 from "../assets/Rectangle 1.png"
+import Product2 from "../assets/Rectangle 12.png"
+import Product3 from "../assets/Rectangle 2.png"
+import Product4 from "../assets/Rectangle 3.png"
+import Product5 from "../assets/Rectangle 4 .png"
+
 
 const dummyLandingPage =[
     {
+        id: 1,
         productName : "Ice cofee Palm Sugar",
-        productImage:"https://i.pinimg.com/564x/f8/ad/b1/f8adb1dffd0c001f8627afc9c2d043d3.jpg",
-        price :"Rp.27.000"
+        productImage:Product2,
+        price :"27000"
     
     },
     {
+        id: 2,
         productName : "Ice Cofee Green Tea",
-        productImage:"https://i.pinimg.com/564x/f8/ad/b1/f8adb1dffd0c001f8627afc9c2d043d3.jpg",
-        price :"Rp.31.000"
+        productImage:Product5,
+        price :"31000"
     
     },
     {
+       
+        id: 3,
         productName : "Hanami Latte",
-        productImage:"https://i.pinimg.com/564x/f8/ad/b1/f8adb1dffd0c001f8627afc9c2d043d3.jpg",
-        price :"Rp.29.000"
+        productImage:Product3,
+        price :"29000"
     },
     {
+        id: 4,
         productName : "Clepon Coffee",
-        productImage:"https://i.pinimg.com/564x/f8/ad/b1/f8adb1dffd0c001f8627afc9c2d043d3.jpg",
-        price :     "Rp.28.000"
+        productImage:Product4,
+        price :     "28000"
+    
+    },
+    {
+        id: 5,
+        productName : "Ice cofee Palm Sugar",
+        productImage:Product1,
+        price :"27000"
+    
+    },
+    {
+        id: 6,
+        productName : "Ice Cofee Green Tea",
+        productImage:Product5,
+        price :"31000"
+    
+    },
+    {
+        id: 7,
+        productName : "Hanami Latte",
+        productImage:Product3,
+        price :"29000"
+    },
+    {
+        id: 8,
+        productName : "Clepon Coffee",
+        productImage:Product4,
+        price :     "28000"
     
     }
     ]

@@ -43,25 +43,21 @@ export default function LandingPage() {
           <p>Let's Order</p>
         </span>
         <div className={cssModules.landofdown}>
-          <>
-            {dummyLandingPage?.map((item, index) => (
-              <div className={cssModules.card3}>
-                <Card className={cssModules.card2}>
-                  <Link to="/detail-product">
-                    <Card.Img variant="top" src={item.productImage} />
-                  </Link>
-                  <Card.Body>
-                    <Card.Text className={cssModules.text1}>
-                      {item.productName}
-                    </Card.Text>
-                    <Card.Text className={cssModules.text2}>
-                      {item.price}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
+          {dummyLandingPage?.map((item, index) => (
+            <div className={cssModules.card} key={index}>
+              <div className={cssModules.card1}>
+                <Link to={`/detail-product/${item.id}`}>
+                  <Card.Img variant="top" src={item.productImage} />
+                </Link>
+                <div className={cssModules.card2}>
+                  <p className={cssModules.text1}>
+                    {item.productName.substring(0, 20)}
+                  </p>
+                  <p className={cssModules.text2}>{item.price}</p>
+                </div>
               </div>
-            ))}
-          </>
+            </div>
+          ))}
         </div>
       </section>
     </div>
