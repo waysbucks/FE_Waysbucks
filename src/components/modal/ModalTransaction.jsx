@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import QRCode from "react-qr-code";
-import Logo from "../../assets/Group.svg";
+import Logo from "../../assets/Logo.svg";
 
 import dummyTransaction from "../../DataDummy/dummyTransaction";
 

@@ -7,6 +7,8 @@ const initial = {
     user:{}
 }
 
+console.log(UserContext);
+
 const reducer = (state,action) => {
     const {type, payload} = action
 

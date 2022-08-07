@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 
 import Coffee from "../assets/coffee.jpg";
 import paperClip from "../assets/paperClip.png";
+import Navbar from "../components/navbar/navbar";
 
 export default function AddProduct() {
   const [product, setProduct] = useState({});
@@ -26,46 +27,49 @@ export default function AddProduct() {
     e.prevent.default();
   };
   return (
-    <Container className="addProductContainer">
-      <div className="addProductLeft">
-        <form>
-          <h1>Product</h1>
-          <input
-            type="text"
-            placeholder="Name Product"
-            name="product"
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            placeholder="Price"
-            className="price"
-            name="price"
-            onChange={handleChange}
-          />
-          <input
-            type="file"
-            id="addProductImage"
-            hidden
-            className="photoProduct"
-            name="productImg"
-            onChange={handleChange}
-          />
-          <label
-            htmlFor="addProductImage"
-            className={previewName === "" ? "addProductImage" : "previewName"}
-          >
-            {previewName === "" ? "Photo Product" : previewName}
-            <img src={paperClip} alt="paperClip" />
-          </label>
-          <button>Add Product</button>
-        </form>
-      </div>
-      {preview && (
-        <div className="addProductRight">
-          <img src={preview} alt="preview" />
+    <>
+      <Navbar />
+      <Container className="addProductContainer">
+        <div className="addProductLeft">
+          <form>
+            <h1>Product</h1>
+            <input
+              type="text"
+              placeholder="Name Product"
+              name="product"
+              onChange={handleChange}
+            />
+            <input
+              type="number"
+              placeholder="Price"
+              className="price"
+              name="price"
+              onChange={handleChange}
+            />
+            <input
+              type="file"
+              id="addProductImage"
+              hidden
+              className="photoProduct"
+              name="productImg"
+              onChange={handleChange}
+            />
+            <label
+              htmlFor="addProductImage"
+              className={previewName === "" ? "addProductImage" : "previewName"}
+            >
+              {previewName === "" ? "Photo Product" : previewName}
+              <img src={paperClip} alt="paperClip" />
+            </label>
+            <button>Add Product</button>
+          </form>
         </div>
-      )}
-    </Container>
+        {preview && (
+          <div className="addProductRight">
+            <img src={preview} alt="preview" />
+          </div>
+        )}
+      </Container>
+    </>
   );
 }

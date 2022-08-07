@@ -18,7 +18,6 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute";
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/profile" element={<Profile />} />

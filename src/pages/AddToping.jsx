@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 
 import Coffee from "../assets/coffee.jpg";
 import paperClip from "../assets/paperClip.png";
+import Navbar from "../components/navbar/navbar";
 
 export default function AddToping() {
   const [product, setProduct] = useState({});
@@ -28,42 +29,45 @@ export default function AddToping() {
     e.prevent.default();
   };
   return (
-    <Container className="addProductContainer">
-      <div className="addProductLeft">
-        <h1>Toping</h1>
-        <input
-          type="text"
-          placeholder="Name Toping"
-          name="topingName"
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          placeholder="Price"
-          name="topingPrice"
-          onChange={handleChange}
-        />
-        <input
-          type="file"
-          id="addProductImage"
-          hidden
-          name="topingImg"
-          onChange={handleChange}
-        />
-        <label
-          htmlFor="addProductImage"
-          className={previewName === "" ? "addProductImage" : "previewName"}
-        >
-          {previewName === "" ? "Photo Toping" : previewName}
-          <img src={paperClip} alt="paperClip" />
-        </label>
-        <button>Add Toping</button>
-      </div>
-      {preview && (
-        <div className="addProductRight">
-          <img src={preview} alt="preview" />
+    <>
+      <Navbar />
+      <Container className="addProductContainer">
+        <div className="addProductLeft">
+          <h1>Toping</h1>
+          <input
+            type="text"
+            placeholder="Name Toping"
+            name="topingName"
+            onChange={handleChange}
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            name="topingPrice"
+            onChange={handleChange}
+          />
+          <input
+            type="file"
+            id="addProductImage"
+            hidden
+            name="topingImg"
+            onChange={handleChange}
+          />
+          <label
+            htmlFor="addProductImage"
+            className={previewName === "" ? "addProductImage" : "previewName"}
+          >
+            {previewName === "" ? "Photo Toping" : previewName}
+            <img src={paperClip} alt="paperClip" />
+          </label>
+          <button>Add Toping</button>
         </div>
-      )}
-    </Container>
+        {preview && (
+          <div className="addProductRight">
+            <img src={preview} alt="preview" />
+          </div>
+        )}
+      </Container>
+    </>
   );
 }

@@ -9,7 +9,7 @@ const dummyLandingPage =[
     {
         id: 1,
         productName : "Ice cofee Palm Sugar",
-        productImage:Product2,
+        productImage:Product3,
         price :27000
     
     },

@@ -11,7 +11,6 @@ import { UserContext } from "../../../context/UserContext";
 export default function Dropdown() {
   const [state] = useContext(UserContext);
   const status = state.user.status;
-  console.log(status === "admin");
   return (
     <NavDropdown
       title={<img src={Photo} alt="photoProfile" className="navbarPhoto" />}

@@ -7,6 +7,7 @@ import trash from "../assets/trash.svg";
 import dummyTransaction from "../DataDummy/dummyTransaction";
 
 import ModalCart from "../components/modal/modalCart";
+import Navbar from "../components/navbar/navbar";
 
 export default function CartPage() {
   let resultTotal = productCart.reduce((a, b) => {
@@ -21,60 +22,63 @@ export default function CartPage() {
   const handleShow = () => setShowTrans(true);
   const handleClose = () => setShowTrans(false);
   return (
-    <div className={cartModules.container}>
-      <section>
-        <p className={cartModules.titlePage}>My Cart</p>
-        <p className={cartModules.subtitlePage}>Review Your Order</p>
-        <div className={cartModules.wrap}>
+    <>
+      <Navbar />
+      <div className={cartModules.container}>
+        <section>
+          <p className={cartModules.titlePage}>My Cart</p>
+          <p className={cartModules.subtitlePage}>Review Your Order</p>
           <div className={cartModules.wrap}>
-            {/*  */}
-            <div className={cartModules.left}>
-              {productCart?.map((item, index) => (
-                <div className={cartModules.warpProduct} key={index}>
-                  <img
-                    src={item.image}
-                    className={cartModules.imgProduct}
-                    alt="cartimage"
-                  />
-                  <div className={cartModules.con_wrap}>
-                    <span className={cartModules.tex_left}>
-                      <p>{item.name}</p>
-                      <p>{item.price}</p>
-                    </span>
-                    <span className={cartModules.tex_left1}>
-                      <p>
-                        Toping : <span> {item.toping.toString()}</span>
-                      </p>
-                      <img src={trash} onClick={handleRemove} />
-                    </span>
+            <div className={cartModules.wrap}>
+              {/*  */}
+              <div className={cartModules.left}>
+                {productCart?.map((item, index) => (
+                  <div className={cartModules.warpProduct} key={index}>
+                    <img
+                      src={item.image}
+                      className={cartModules.imgProduct}
+                      alt="cartimage"
+                    />
+                    <div className={cartModules.con_wrap}>
+                      <span className={cartModules.tex_left}>
+                        <p>{item.name}</p>
+                        <p>{item.price}</p>
+                      </span>
+                      <span className={cartModules.tex_left1}>
+                        <p>
+                          Toping : <span> {item.toping.toString()}</span>
+                        </p>
+                        <img src={trash} onClick={handleRemove} />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className={cartModules.right}>
-              <div className={cartModules.rightline}>
-                <span>
-                  <p>Subtotal</p>
+              <div className={cartModules.right}>
+                <div className={cartModules.rightline}>
+                  <span>
+                    <p>Subtotal</p>
+                    <p>{resultTotal}</p>
+                  </span>
+                  <span>
+                    <p>Qty</p>
+                    <p>{productCart.length}</p>
+                  </span>
+                </div>
+                <span className={cartModules.price}>
+                  <p>Total</p>
                   <p>{resultTotal}</p>
                 </span>
-                <span>
-                  <p>Qty</p>
-                  <p>{productCart.length}</p>
-                </span>
-              </div>
-              <span className={cartModules.price}>
-                <p>Total</p>
-                <p>{resultTotal}</p>
-              </span>
-              <div className={cartModules.btn_grp}>
-                <button onClick={handleShow}>Pay</button>
+                <div className={cartModules.btn_grp}>
+                  <button onClick={handleShow}>Pay</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <ModalCart showTrans={showTrans} close={handleClose} />
-      </section>
-    </div>
+          <ModalCart showTrans={showTrans} close={handleClose} />
+        </section>
+      </div>
+    </>
   );
 }

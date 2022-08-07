@@ -5,10 +5,11 @@ import { UserContext } from "../../context/UserContext";
 import Dropdown from "./dropdown/dropdown";
 import ModalAuth from "../modal/ModalAuth";
 
-import Logo from "../../assets/Group.svg";
+import Logo from "../../assets/Logo.svg";
 import Cart from "../../assets/Vector.svg";
+import Circle from "../../assets/circle.svg";
 
-export default function Navbar() {
+export default function Navbar({ counter }) {
   const [state] = useContext(UserContext);
   const isLogin = state.isLogin;
 
@@ -21,6 +22,17 @@ export default function Navbar() {
       </div>
       {isLogin ? (
         <div className="navbarRight">
+          <div
+            className={
+              counter === undefined
+                ? "d-none"
+                : counter === 0
+                ? "d-none"
+                : "circle"
+            }
+          >
+            {counter}
+          </div>
           <Link to={"/cart"}>
             <img src={Cart} alt="cart" className="navbarCart" />
           </Link>
