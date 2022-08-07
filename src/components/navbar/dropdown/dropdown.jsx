@@ -7,47 +7,58 @@ import AddProduct from "../../../assets/AddProduct.svg";
 import AddToping from "../../../assets/topping 1.svg";
 import Logout from "../../../assets/logout 1.png";
 import { UserContext } from "../../../context/UserContext";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Dropdown() {
-  const [state] = useContext(UserContext);
+  const [state, dispatch] = useContext(UserContext);
   const status = state.user.status;
+  const navigate = useNavigate();
+
+  const logout = () => {
+    dispatch({
+      type: "LOGOUT",
+    });
+    navigate("/");
+  };
   return (
     <NavDropdown
       title={<img src={Photo} alt="photoProfile" className="navbarPhoto" />}
       className="navImg"
     >
-      <NavDropdown.Item
-        href="/profile"
-        className={status === "customer" ? "" : "d-none"}
-      >
-        <img src={Profile} alt="profile" className="d-flex dropdown-img" />
-        <p className="d-flex mb-0 dropCust pe-4">Profile</p>
-      </NavDropdown.Item>
-
-      <NavDropdown.Item
-        href="/add-product"
-        className={status === "admin" ? "mb-2 mt-2 ps-3" : "d-none"}
-      >
-        <img
-          src={AddProduct}
-          alt="AddProduct"
-          className="d-flex dropdown-img"
-        />
-        <p className="d-flex mb-0 ps-3 dropAdmin">AddProduct</p>
+      <NavDropdown.Item className={status === "customer" ? "" : "d-none"}>
+        <Link to="/profile" className="navbarItem navbarProfile">
+          <img src={Profile} alt="profile" className="d-flex dropdown-img" />
+          <p className="d-flex mb-0 dropCust tagProfile">Profile</p>
+        </Link>
       </NavDropdown.Item>
 
       <NavDropdown.Item
         className={status === "admin" ? "mb-2 mt-2 ps-3" : "d-none"}
       >
-        <img
-          src={AddToping}
-          alt="AddToping"
-          className="d-flex dropdown-img navAddTopping"
-        />
-        <p className="d-flex mb-0 dropAdmin ">AddToping</p>
+        <Link to="/add-product" className="navbarItem">
+          <img
+            src={AddProduct}
+            alt="AddProduct"
+            className="d-flex dropdown-img"
+          />
+          <p className="d-flex mb-0 ps-3 dropAdmin">AddProduct</p>
+        </Link>
+      </NavDropdown.Item>
+
+      <NavDropdown.Item
+        className={status === "admin" ? "mb-2 mt-2 ps-3" : "d-none"}
+      >
+        <Link to="/add-toping" className="navbarItem">
+          <img
+            src={AddToping}
+            alt="AddToping"
+            className="d-flex dropdown-img navAddTopping"
+          />
+          <p className="d-flex ps-3 mb-0 dropAdmin ">AddToping</p>
+        </Link>
       </NavDropdown.Item>
       <hr />
-      <NavDropdown.Item>
+      <NavDropdown.Item onClick={logout}>
         <img src={Logout} alt="logout" className="d-flex dropdown-img" />
         <p className="d-flex mb-0 dropCust pe-4">Logout</p>
       </NavDropdown.Item>

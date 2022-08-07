@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 
@@ -7,11 +7,11 @@ import ModalAuth from "../modal/ModalAuth";
 
 import Logo from "../../assets/Logo.svg";
 import Cart from "../../assets/Vector.svg";
-import Circle from "../../assets/circle.svg";
 
 export default function Navbar({ counter }) {
   const [state] = useContext(UserContext);
   const isLogin = state.isLogin;
+  console.log(state);
 
   return (
     <nav>
@@ -34,7 +34,13 @@ export default function Navbar({ counter }) {
             {counter}
           </div>
           <Link to={"/cart"}>
-            <img src={Cart} alt="cart" className="navbarCart" />
+            <img
+              src={Cart}
+              alt="cart"
+              className={
+                state.user.status === "customer" ? "navbarCart" : "d-none"
+              }
+            />
           </Link>
           <Dropdown />
         </div>

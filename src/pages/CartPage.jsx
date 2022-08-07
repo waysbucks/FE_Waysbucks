@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import cartModules from "../styles/cart.module.css";
 import productCart from "../DataDummy/dummyCart";
+import Rupiah from "rupiah-format";
 // image
 
 import trash from "../assets/trash.svg";
@@ -42,13 +43,13 @@ export default function CartPage() {
                     <div className={cartModules.con_wrap}>
                       <span className={cartModules.tex_left}>
                         <p>{item.name}</p>
-                        <p>{item.price}</p>
+                        <p>{Rupiah.convert(item.price)}</p>
                       </span>
                       <span className={cartModules.tex_left1}>
                         <p>
                           Toping : <span> {item.toping.toString()}</span>
                         </p>
-                        <img src={trash} onClick={handleRemove} />
+                        <img src={trash} onClick={handleRemove} alt="#" />
                       </span>
                     </div>
                   </div>
@@ -59,7 +60,7 @@ export default function CartPage() {
                 <div className={cartModules.rightline}>
                   <span>
                     <p>Subtotal</p>
-                    <p>{resultTotal}</p>
+                    <p>{Rupiah.convert(resultTotal)}</p>
                   </span>
                   <span>
                     <p>Qty</p>
@@ -68,7 +69,7 @@ export default function CartPage() {
                 </div>
                 <span className={cartModules.price}>
                   <p>Total</p>
-                  <p>{resultTotal}</p>
+                  <p>{Rupiah.convert(resultTotal)}</p>
                 </span>
                 <div className={cartModules.btn_grp}>
                   <button onClick={handleShow}>Pay</button>

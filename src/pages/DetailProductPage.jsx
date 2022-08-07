@@ -8,7 +8,6 @@ import checkToping from "../assets/checkToping.svg";
 
 // dummyData
 import dummyLandingPage from "../DataDummy/dummyLandingPage";
-import productCart from "../DataDummy/dummyCart";
 import dataToping from "../DataDummy/dummyTopping";
 import { useState } from "react";
 import Navbar from "../components/navbar/navbar";
@@ -54,8 +53,9 @@ export default function DetailProductPage() {
   // submit
 
   // tambah price
-  let resultTotal = data.reduce((a, b) => {
-    return a + b.price;
+  let resultTotal = toping.reduce((a, b) => {
+    console.log(b);
+    return a + parseInt(b);
   }, 0);
 
   console.log(resultTotal);
@@ -113,7 +113,7 @@ export default function DetailProductPage() {
               </span>
               <div className={productModules.price}>
                 <p>Total</p>
-                <p>{data.price}</p>
+                <p>{Rupiah.convert(data.price + resultTotal)}</p>
               </div>
               <div className={productModules.btn_grp}>
                 <button className={productModules.btn} onClick={handleSubmit}>

@@ -5,7 +5,7 @@ import Logo from "../../assets/Logo.svg";
 
 import dummyTransaction from "../../DataDummy/dummyTransaction";
 
-export default function ModalTransaction({ showTrans, close, id, product }) {
+export default function ModalTransaction({ showTrans, close, id }) {
   let productt = dummyTransaction[id - 1];
   return (
     <Modal show={showTrans} onHide={close} className="modal-transaction">

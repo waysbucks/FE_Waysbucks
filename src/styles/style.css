@@ -6,17 +6,28 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
+}
 
-
+#root{
+    background-color: #fffbfb;
 }
 
 /* navbar */
+.navbarProfile{
+    margin-left: -30px;
+}
+
+.tagProfile{
+    padding-left: 35px;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 70px 0px 50px;
 }
+
 
 .navbarLogo{
     width: 70px;
@@ -103,6 +114,16 @@ nav{
     align-items: center;
     padding-left: 5px !important;
     padding-right: 20px !important;
+}
+
+.navbarItem{
+    color: black;
+    text-decoration: none;
+    display: flex;
+}
+
+.navbarItem:hover{
+    color: black;
 }
 
 .dropCust {
