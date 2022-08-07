@@ -3,12 +3,15 @@ import { Modal } from "react-bootstrap";
 import QRCode from "react-qr-code";
 import Logo from "../../assets/Group.svg";
 
-export default function ModalTransaction({ showTrans, close, product }) {
+import dummyTransaction from "../../DataDummy/dummyTransaction";
+
+export default function ModalTransaction({ showTrans, close, id, product }) {
+  let productt = dummyTransaction[id - 1];
   return (
     <Modal show={showTrans} onHide={close} className="modal-transaction">
       <div className="profileCard">
         <div className="contentCardLeft">
-          {product?.map((item, index) => (
+          {productt?.product?.map((item, index) => (
             <div className="mapContent" key={index}>
               <img src={item.productImg} alt="coffee" />
               <ul>

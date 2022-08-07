@@ -11,7 +11,7 @@ const dummyTransaction = [
         {
             id: 1,
             productImg: "https://assets.klikindomaret.com/products/20079739/20079739_1.jpg",
-            productName: "Ice Coffee Palm Sugar",
+            productName: "Ice Coffee Palm Sugar1",
             toping: ["Boba Mango","Green Coconut","Mango"],
             price: 25000
         },
@@ -35,7 +35,7 @@ const dummyTransaction = [
             {
                 id: 1,
                 productImg: "https://assets.klikindomaret.com/products/20079739/20079739_1.jpg",
-                productName: "Ice Coffee Palm Sugar",
+                productName: "Ice Coffee Palm Sugar2",
                 toping: ["Boba Mango","Green Coconut","Mango"],
                 price: 25000
             },
@@ -59,7 +59,7 @@ const dummyTransaction = [
             {
                 id: 1,
                 productImg: "https://assets.klikindomaret.com/products/20079739/20079739_1.jpg",
-                productName: "Ice Coffee Palm Sugar",
+                productName: "Ice Coffee Palm Sugar3",
                 toping: ["Boba Mango","Green Coconut","Mango"],
                 price: 25000
             },
@@ -83,7 +83,7 @@ const dummyTransaction = [
             {
                 id: 1,
                 productImg: "https://assets.klikindomaret.com/products/20079739/20079739_1.jpg",
-                productName: "Ice Coffee Palm Sugar",
+                productName: "Ice Coffee Palm Sugar4",
                 toping: ["Boba Mango","Green Coconut","Mango"],
                 price: 25000
             },

@@ -7,12 +7,13 @@ import dummyTransaction from "../DataDummy/dummyTransaction";
 
 export default function Transaction() {
   const [showTrans, setShowTrans] = useState(false);
-  const handleShow = () => setShowTrans(true);
+  const [idOrder, setIdOrder] = useState(null);
+  const handleShow = (id) => {
+    console.log(id);
+    setIdOrder(id);
+    setShowTrans(true);
+  };
   const handleClose = () => setShowTrans(false);
-
-  const id = document.getElementById;
-
-  console.log(dummyTransaction[1]);
 
   return (
     <Container className="tableContainer">
@@ -31,7 +32,7 @@ export default function Transaction() {
           </thead>
           <tbody>
             {dummyTransaction?.map((item, index) => (
-              <tr onClick={handleShow} key={index}>
+              <tr onClick={() => handleShow(item.id)} key={index}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.address}</td>
@@ -55,7 +56,11 @@ export default function Transaction() {
           </tbody>
         </Table>
       </div>
-      <ModalTransaction showTrans={showTrans} close={handleClose} />
+      <ModalTransaction
+        showTrans={showTrans}
+        close={handleClose}
+        id={idOrder}
+      />
     </Container>
   );
 }
