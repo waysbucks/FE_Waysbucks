@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 
-import Coffee from "../assets/coffee.jpg";
 import paperClip from "../assets/paperClip.png";
 import Navbar from "../components/navbar/navbar";
 
