@@ -1,5 +1,4 @@
 import Product1 from "../assets/Rectangle 1.png"
-import Product2 from "../assets/Rectangle 12.png"
 import Product3 from "../assets/Rectangle 2.png"
 import Product4 from "../assets/Rectangle 3.png"
 import Product5 from "../assets/Rectangle 4 .png"

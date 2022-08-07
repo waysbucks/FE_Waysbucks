@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import QRCode from "react-qr-code";
 import Logo from "../../assets/Logo.svg";
+import Rupiah from "rupiah-format";
 
 import dummyTransaction from "../../DataDummy/dummyTransaction";
 
@@ -22,7 +23,9 @@ export default function ModalTransaction({ showTrans, close, id }) {
                 <li className="profileCardToping">
                   <strong>Toping :</strong>
                 </li>
-                <li className="profileCardPrice">Price: {item.price}</li>
+                <li className="profileCardPrice">
+                  Price: {Rupiah.convert(item.price)}
+                </li>
               </ul>
             </div>
           ))}

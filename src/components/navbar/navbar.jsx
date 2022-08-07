@@ -11,7 +11,6 @@ import Cart from "../../assets/Vector.svg";
 export default function Navbar({ counter }) {
   const [state] = useContext(UserContext);
   const isLogin = state.isLogin;
-  console.log(state);
 
   return (
     <nav>

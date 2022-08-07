@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import ModalTransaction from "../components/modal/ModalTransaction";
 import Navbar from "../components/navbar/navbar";
+import Rupiah from "rupiah-format";
 
 // fakeData
 import dummyTransaction from "../DataDummy/dummyTransaction";
@@ -40,7 +41,7 @@ export default function Transaction() {
                   <td>{item.name}</td>
                   <td>{item.address}</td>
                   <td>{item.postCode}</td>
-                  <td className="tablePrice">{item.income}</td>
+                  <td className="tablePrice">{Rupiah.convert(item.income)}</td>
                   <td
                     className={
                       item.status === "Success"
