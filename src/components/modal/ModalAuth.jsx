@@ -114,12 +114,12 @@ export default function ModalAuth() {
             <div className="authContainer">
               <h1 className="authTitle">Register</h1>
               <input
-                type="text"
+                type="email"
                 className="inputAuth p-2"
                 placeholder="Email"
               />
               <input
-                type="text"
+                type="password"
                 className="inputAuth p-2"
                 placeholder="Password"
               />
