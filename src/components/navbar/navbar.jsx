@@ -1,14 +1,17 @@
+// dependencies
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 
+// components
 import Dropdown from "./dropdown/dropdown";
 import ModalAuth from "../modal/ModalAuth";
 
+// files
 import Logo from "../../assets/Logo.svg";
 import Cart from "../../assets/Vector.svg";
 
-export default function Navbar({ counter }) {
+export default function Navbar({ counter, setShow, show }) {
   const [state] = useContext(UserContext);
   const isLogin = state.isLogin;
 
@@ -45,7 +48,7 @@ export default function Navbar({ counter }) {
         </div>
       ) : (
         <div className="navbarLeft">
-          <ModalAuth />
+          <ModalAuth show={show} setShow={setShow} />
         </div>
       )}
     </nav>

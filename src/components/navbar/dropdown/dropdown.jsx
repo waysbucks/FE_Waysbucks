@@ -1,15 +1,18 @@
+// dependencies
 import React, { useContext } from "react";
 import { NavDropdown } from "react-bootstrap";
+import { UserContext } from "../../../context/UserContext";
+import { Link, useNavigate } from "react-router-dom";
 
+// files
 import Photo from "../../../assets/Ellipse 1.png";
 import Profile from "../../../assets/user 2.svg";
 import AddProduct from "../../../assets/AddProduct.svg";
 import AddToping from "../../../assets/topping 1.svg";
 import Logout from "../../../assets/logout 1.png";
-import { UserContext } from "../../../context/UserContext";
-import { Link, useNavigate } from "react-router-dom";
 
 export default function Dropdown() {
+  // logout
   const [state, dispatch] = useContext(UserContext);
   const status = state.user.status;
   const navigate = useNavigate();
@@ -20,6 +23,7 @@ export default function Dropdown() {
     });
     navigate("/");
   };
+
   return (
     <NavDropdown
       title={<img src={Photo} alt="photoProfile" className="navbarPhoto" />}
