@@ -1,27 +1,37 @@
+// dependencies
 import React, { useState } from "react";
-import cartModules from "../styles/cart.module.css";
-import productCart from "../DataDummy/dummyCart";
 import Rupiah from "rupiah-format";
-// image
 
-import trash from "../assets/trash.svg";
+// style
+import cartModules from "../styles/cart.module.css";
+
+// fakedata
+import productCart from "../DataDummy/dummyCart";
 import dummyTransaction from "../DataDummy/dummyTransaction";
 
+// file
+import trash from "../assets/trash.svg";
+
+// component
 import ModalCart from "../components/modal/modalCart";
 import Navbar from "../components/navbar/navbar";
 
 export default function CartPage() {
+  // result
   let resultTotal = productCart.reduce((a, b) => {
     return a + b.price;
-  }, 0);
+  }, 2);
 
+  // remove
   let handleRemove = () => {
     dummyTransaction.splice(0, 1);
   };
 
+  // modal
   const [showTrans, setShowTrans] = useState(false);
   const handleShow = () => setShowTrans(true);
   const handleClose = () => setShowTrans(false);
+
   return (
     <>
       <Navbar />

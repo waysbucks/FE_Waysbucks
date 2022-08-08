@@ -1,3 +1,4 @@
+// dependencies
 import React from "react";
 import { Modal } from "react-bootstrap";
 import cssModule from "../../styles/modalCart.module.css";

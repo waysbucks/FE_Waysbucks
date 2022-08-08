@@ -1,17 +1,32 @@
-import cssModules from "../styles/home.module.css";
-import landing_2 from "../assets/land.2.png";
+// dependencies
+import { useContext, useState } from "react";
+import Rupiah from "rupiah-format";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Rupiah from "rupiah-format";
+import { UserContext } from "../context/UserContext";
 
-//dummy
+// style
+import cssModules from "../styles/home.module.css";
+
+// file
+import landing_2 from "../assets/land.2.png";
+
+//fakedata
 import dummyLandingPage from "../DataDummy/dummyLandingPage";
+
+// component
 import Navbar from "../components/navbar/navbar";
 
 export default function LandingPage() {
+  // user data
+  const [state] = useContext(UserContext);
+  // modal login
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(true);
+
   return (
     <>
-      <Navbar />
+      <Navbar setShow={setShow} show={show} />
       <div>
         <section>
           <div className={cssModules.landing_page}>
@@ -50,7 +65,12 @@ export default function LandingPage() {
             {dummyLandingPage?.map((item, index) => (
               <div className={cssModules.card} key={index}>
                 <div className={cssModules.card1}>
-                  <Link to={`/detail-product/${item.id}`}>
+                  <Link
+                    to={
+                      state.isLogin === true ? `/detail-product/${item.id}` : ""
+                    }
+                    onClick={state.isLogin === false ? handleClick : ""}
+                  >
                     <Card.Img variant="top" src={item.productImage} />
                   </Link>
                   <div className={cssModules.card2}>

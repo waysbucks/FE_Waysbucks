@@ -1,18 +1,23 @@
+// dependencies
 import { useParams } from "react-router-dom";
 import Rupiah from "rupiah-format";
+import { useState } from "react";
+
+// style
 import productModules from "../styles/product.module.css";
 
-// main image
+// file
 import checkToping from "../assets/checkToping.svg";
-// topping
 
 // dummyData
 import dummyLandingPage from "../DataDummy/dummyLandingPage";
 import dataToping from "../DataDummy/dummyTopping";
-import { useState } from "react";
+
+// component
 import Navbar from "../components/navbar/navbar";
 
 export default function DetailProductPage() {
+  // filter
   const params = useParams();
   const data = dummyLandingPage[parseInt(params.id - 1)];
 
@@ -26,11 +31,9 @@ export default function DetailProductPage() {
       setShow(false);
     }
   };
-  // /check
 
   // toping
   const [toping, setToping] = useState([]);
-  console.log(toping);
   const handleChange = (e) => {
     let updateToping = [...toping];
     if (e.target.checked) {
@@ -40,26 +43,18 @@ export default function DetailProductPage() {
     }
     setToping(updateToping);
   };
-  // /toping
 
   // submit
   const [counter, setCounter] = useState(0);
-  console.log(counter);
   const handleSubmit = (e) => {
     e.preventDefault();
     setCounter(counter + 1);
   };
 
-  // submit
-
   // tambah price
   let resultTotal = toping.reduce((a, b) => {
-    console.log(b);
     return a + parseInt(b);
   }, 0);
-
-  console.log(resultTotal);
-  // tambah price
 
   return (
     <>

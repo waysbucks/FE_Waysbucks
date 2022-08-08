@@ -1,9 +1,10 @@
-import { useContext } from "react"
+// import { useContext } from "react"
 import { Outlet, Navigate } from "react-router-dom"
-import { UserContext } from "../../context/UserContext.js"
+// import { UserContext } from "../../context/UserContext.js"
 export default function PrivateRoute() {
-    const [state] = useContext(UserContext)
+  console.log(Outlet)
+    const role = "admin"
   return (
-    state.user.status === "admin" ? <Outlet /> : <Navigate to="/transaction" />
+    role ? <Outlet /> : <Navigate to="/" />
   )
 }

@@ -1,8 +1,13 @@
+// dependencies
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-import paperClip from "../assets/paperClip.png";
+// component
 import Navbar from "../components/navbar/navbar";
+
+// file
+import paperClip from "../assets/paperClip.png";
 
 export default function AddToping() {
   const [product, setProduct] = useState({});
@@ -24,42 +29,47 @@ export default function AddToping() {
     }
   };
 
+  let navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.prevent.default();
+    navigate("/transaction");
   };
   return (
     <>
       <Navbar />
       <Container className="addProductContainer">
         <div className="addProductLeft">
-          <h1>Toping</h1>
-          <input
-            type="text"
-            placeholder="Name Toping"
-            name="topingName"
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            placeholder="Price"
-            name="topingPrice"
-            onChange={handleChange}
-          />
-          <input
-            type="file"
-            id="addProductImage"
-            hidden
-            name="topingImg"
-            onChange={handleChange}
-          />
-          <label
-            htmlFor="addProductImage"
-            className={previewName === "" ? "addProductImage" : "previewName"}
-          >
-            {previewName === "" ? "Photo Toping" : previewName}
-            <img src={paperClip} alt="paperClip" />
-          </label>
-          <button>Add Toping</button>
+          <form onSubmit={handleSubmit}>
+            <h1>Toping</h1>
+            <input
+              type="text"
+              placeholder="Name Toping"
+              name="topingName"
+              onChange={handleChange}
+            />
+            <input
+              type="number"
+              placeholder="Price"
+              name="topingPrice"
+              onChange={handleChange}
+            />
+            <input
+              type="file"
+              id="addProductImage"
+              hidden
+              name="topingImg"
+              onChange={handleChange}
+            />
+            <label
+              htmlFor="addProductImage"
+              className={previewName === "" ? "addProductImage" : "previewName"}
+            >
+              {previewName === "" ? "Photo Toping" : previewName}
+              <img src={paperClip} alt="paperClip" />
+            </label>
+            <button>Add Toping</button>
+          </form>
         </div>
         {preview && (
           <div className="addProductRight">

@@ -1,10 +1,14 @@
+// dependencies
 import React from "react";
-import PhotoProfile from "../assets/Rectangle 12.png";
 import { Container } from "react-bootstrap";
 import QRCode from "react-qr-code";
 
+// file
+import PhotoProfile from "../assets/Rectangle 12.png";
 import Coffee from "../assets/coffee.jpg";
 import Logo from "../assets/Logo.svg";
+
+// component
 import Navbar from "../components/navbar/navbar";
 
 export default function Profile() {

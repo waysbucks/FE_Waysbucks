@@ -1,8 +1,13 @@
+// dependencies
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 
-import paperClip from "../assets/paperClip.png";
+// component
 import Navbar from "../components/navbar/navbar";
+
+// file
+import paperClip from "../assets/paperClip.png";
+import { useNavigate } from "react-router-dom";
 
 export default function AddProduct() {
   const [product, setProduct] = useState({});
@@ -22,15 +27,19 @@ export default function AddProduct() {
     }
   };
 
+  let navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.prevent.default();
+    navigate("/transaction");
   };
+
   return (
     <>
       <Navbar />
       <Container className="addProductContainer">
         <div className="addProductLeft">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>Product</h1>
             <input
               type="text"

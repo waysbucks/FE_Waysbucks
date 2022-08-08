@@ -1,17 +1,21 @@
+// dependencies
 import React, { useState } from "react";
 import { Container, Table } from "react-bootstrap";
+import Rupiah from "rupiah-format";
+
+// component
 import ModalTransaction from "../components/modal/ModalTransaction";
 import Navbar from "../components/navbar/navbar";
-import Rupiah from "rupiah-format";
 
 // fakeData
 import dummyTransaction from "../DataDummy/dummyTransaction";
 
 export default function Transaction() {
+  // modal
   const [showTrans, setShowTrans] = useState(false);
   const [idOrder, setIdOrder] = useState(null);
+
   const handleShow = (id) => {
-    console.log(id);
     setIdOrder(id);
     setShowTrans(true);
   };

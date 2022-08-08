@@ -358,14 +358,36 @@ hr{
     text-align: center;
 }
 
-.contentCardRight span {
+.Otw span {
     margin-top: 20px;
     display: block;
     background: #00d0ff32;
 }
 
-.contentCardRight span p{
+.Cancel span {
+    margin-top: 20px;
+    display: block;
+    background: #bd07075f;
+}
+
+.Success span {
+    margin-top: 20px;
+    display: block;
+    background: #78a85a51;
+}
+
+.Otw span p{
     color: #00d1ff;
+    font-weight: 600;
+}
+
+.Cancel span p{
+    color: #BD0707;
+    font-weight: 600;
+}
+
+.Success span p{
+    color: #78A85A;
     font-weight: 600;
 }
 

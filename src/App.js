@@ -1,7 +1,11 @@
+// dependencies
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./styles/style.css";
+
+// style
 import "bootstrap/dist/css/bootstrap.min.css";
-// import pages
+import "./styles/style.css";
+
+// pages
 import LandingPage from "./pages/LandingPage";
 import DetailProduct from "./pages/DetailProductPage";
 import Cart from "./pages/CartPage";
@@ -10,7 +14,6 @@ import AddProduct from "./pages/AddProduct"
 import AddToping from "./pages/AddToping";
 import Transaction from "./pages/Transaction";
 
-import PrivateRoute from "./components/privateRoute/PrivateRoute"
 
 function App() {
 

@@ -1,11 +1,11 @@
+// dependencies
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { UserContext } from "../../context/UserContext";
 
-export default function ModalAuth() {
+export default function ModalAuth({ show, setShow }) {
   // modal-check
-  const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const [shows, setShows] = useState(false);
@@ -21,7 +21,6 @@ export default function ModalAuth() {
     setShows(false);
     setShow(true);
   };
-  // /modal-check
 
   // functional
   const [login, setLogin] = useState({});
@@ -32,8 +31,6 @@ export default function ModalAuth() {
       [e.target.name]: e.target.value,
     });
   };
-
-  //  /fuctuional
 
   // auth
   const navigate = useNavigate();
@@ -66,7 +63,6 @@ export default function ModalAuth() {
     setShow(false);
   };
 
-  //  /auth
   return (
     <>
       <>

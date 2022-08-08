@@ -57,48 +57,49 @@ const dataToping = [
         price: 5000
     },
     {
-        id: 1,
-        image: Topping1,
-        name: "Bubble Tea Gelatin",
+        id: 9,
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/250px-2ChocolateChipCookies.jpg",
+        name: "Cookies",
         price: 5000
     },
     {
-        id: 2,
+        id: 10,
         image: Topping2,
         name: "Manggo",
         price: 5000
     },
     {
-        id: 3,
+        id: 11,
         image: Topping3,
         name: "Green Coconut",
         price: 5000
     },
     {
-        id: 4,
+        id: 12,
         image: Topping4,
         name: "Boba Manggo",
         price: 5000
     },
     {
-        id: 5,
+        id: 13,
         image: Topping5,
         name: "Bill Berry Boba",
         price: 5000
     },
     {
-        id: 6,   image: Topping6,
+        id: 14,
+        image: Topping6,
         name: "Kiwi Popping Pearl",
         price: 5000
     },
     {
-        id: 7,
+        id: 15,
         image: Topping7,
         name: "Matcha Cataloupe",
         price: 5000
     },
     {
-        id: 8,
+        id: 16,
         image: Topping8,
         name: "Strawberry Popping",
         price: 5000

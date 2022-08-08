@@ -1,13 +1,18 @@
+// dependencies
 import React from "react";
 import { Modal } from "react-bootstrap";
 import QRCode from "react-qr-code";
-import Logo from "../../assets/Logo.svg";
 import Rupiah from "rupiah-format";
 
+// logo
+import Logo from "../../assets/Logo.svg";
+
+// fakedata
 import dummyTransaction from "../../DataDummy/dummyTransaction";
 
 export default function ModalTransaction({ showTrans, close, id }) {
   let productt = dummyTransaction[id - 1];
+
   return (
     <Modal show={showTrans} onHide={close} className="modal-transaction">
       <div className="profileCard">
@@ -30,11 +35,19 @@ export default function ModalTransaction({ showTrans, close, id }) {
             </div>
           ))}
         </div>
-        <div className="contentCardRight">
+        <div
+          className={
+            productt?.status === "Success"
+              ? "contentCardRight Success"
+              : productt?.status === "Cancel"
+              ? "contentCardRight Cancel"
+              : "contentCardRight Otw"
+          }
+        >
           <img src={Logo} alt="logo" />
           <QRCode value="test" bgColor="transparent" size={80} />
           <span>
-            <p>On The Way</p>
+            <p>{productt?.status}</p>
           </span>
           <p className="profileSubTotal">Sub Total : Rp.69.000</p>
         </div>
